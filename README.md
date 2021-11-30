@@ -1,8 +1,8 @@
-#Spring Boot WebSocket
+# Spring Boot WebSocket
 
 Spring Boot WebSocket example using SockJS
 
-###This project contains following examples 
+### This project contains following examples 
 
 - Two-way communication between Server and Client (browser).
   - Sending message to Server from Client.
