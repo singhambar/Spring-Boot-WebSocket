@@ -1,0 +1,79 @@
+<!--/
+**
+* @author Ambar Singh
+* @email_id singhambar55@gmail.com
+**
+/-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/websocket.js"></script>
+</head>
+<style>
+.push-notification {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    left: 43%;
+    margin-left: -100px;
+    top: 5px;
+    background-color: #000;
+    color: #00e4ff;
+    font-family: cursive;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 0px 24px -1px rgb(68 68 68);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    box-shadow: 0px 0px 24px -1px rgb(0 0 0);
+}
+</style>
+<body style="padding: 10px;background: #9ffbff;">
+<noscript><h2 style="color: #ff0000">Browser doesn't support Javascript! WebSocket needs Javascript. Please enable Javascript and reload this page!</h2></noscript>
+<div class='push-notification' style='display:none'>Event Created</div>
+<div id="main-content" class="container">
+    <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
+        <div class="col-md-12">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect to Server</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect from Server
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 20px;height: 500px;background: #e1feff">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Server Reply</th>
+                </tr>
+                </thead>
+                <tbody id="server-message">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 20px;background: #e1feff">
+        <div class="col-md-12">
+            <form class="form-inline">
+                <div class="form-group" style="width: 94.5%;">
+                    <input type="text" id="message" class="form-control" style="width: 100%;"placeholder="Enter your message here...">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

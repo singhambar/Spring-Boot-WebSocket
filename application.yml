@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: Spring Boot WebSocket
+    description: Spring Boot WebSocket example using SockJS
+scheduler:
+  push-notification:
+    rate: 30000
